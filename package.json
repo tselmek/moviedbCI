@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.1",
+    "@lhci/cli": "^0.8.0",
     "axios": "^0.21.1",
     "next": "^10.0.4",
     "react": "^17.0.1",
@@ -28,6 +29,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "start-audit": "yarn start ",
+    "lhci": "./node_modules/.bin/lhci autorun"
   }
 }
