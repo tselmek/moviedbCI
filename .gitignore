@@ -193,3 +193,5 @@ $RECYCLE.BIN/
 
 # Vercel config
 vercel.json
+
+.lighthouseci
