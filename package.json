@@ -6,6 +6,7 @@
     "@badrap/bar-of-progress": "^0.1.1",
     "@lhci/cli": "^0.8.0",
     "axios": "^0.21.1",
+    "concurrently": "^6.2.0",
     "next": "^10.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
@@ -30,7 +31,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "start-audit": "yarn start ",
-    "lhci": "./node_modules/.bin/lhci autorun"
+    "lhci": "./node_modules/.bin/lhci autorun",
+    "greenframe-audit": "./node_modules/.bin/concurrently \"yarn start\" \"greenframe autorun ./greenframe.js http://localhost:3000 -p alpha\" -s last -k"
   }
 }

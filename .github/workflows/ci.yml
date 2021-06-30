@@ -17,6 +17,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
             - run: curl https://assets.greenframe.io/install.sh | bash
+            - run: yarn install
+            - run: yarn build
             - run: greenframe update alpha
             - run: greenframe version
+            - run: yarn greenframe-audit
