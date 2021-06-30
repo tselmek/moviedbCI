@@ -11,7 +11,7 @@ import type {
 const instance = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     params: {
-        api_key: process.env.TMDB_API_KEY,
+        api_key: 'd8709223623ac60cd5322c9059381c49',
     },
 });
 
