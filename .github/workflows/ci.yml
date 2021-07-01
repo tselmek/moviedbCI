@@ -38,7 +38,7 @@ jobs:
             - run: yarn install
             - run: yarn build
             - run: curl https://assets.greenframe.io/install.sh | bash
-            - run: greenframe update
+            - run: greenframe update envvar
             - run: greenframe version
             - run: greenframe analyze ./greenframe.js http://localhost:3030
               env:
