@@ -32,6 +32,6 @@
     "build": "next build",
     "start": "next start",
     "lhci": "./node_modules/.bin/lhci autorun",
-    "greenframe-audit": "./node_modules/.bin/concurrently \"yarn start\" \"greenframe autorun ./greenframe.js http://localhost:3000 -p alpha\" -s last -k"
+    "greenframe-audit": "./node_modules/.bin/concurrently -s first -k \"greenframe autorun ./greenframe.js http://localhost:3000 -p alpha\" \"yarn start\""
   }
 }
