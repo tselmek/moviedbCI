@@ -13,6 +13,7 @@ jobs:
             - run: yarn lhci
               env:
                   LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
     greenframeci:
         runs-on: ubuntu-latest
         steps:
@@ -26,3 +27,24 @@ jobs:
             - run: greenframe update alpha
             - run: greenframe version
             - run: yarn greenframe-audit
+
+    gfci:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '14'
+            - name: "Launch app"
+              run: yarn install
+              run: yarn build
+              with:
+                node-version: '14'
+
+            - name: "Launch GreenFrame analysis"
+              run: curl https://assets.greenframe.io/install.sh | bash
+              run: greenframe update
+              run: greenframe version
+              run: greenframe analyze ./greenframe.js http://localhost:3030
+              env:
+                GREENFRAME_PROJECT_ID: DasKleineKrokodile
