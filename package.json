@@ -32,6 +32,7 @@
     "build": "next build",
     "start": "next start",
     "lhci": "./node_modules/.bin/lhci autorun",
-    "greenframe-audit": "./node_modules/.bin/concurrently -s first -k \"greenframe autorun ./greenframe.js http://localhost:3000 -p alpha\" \"yarn start\""
+    "greenframe-audit": "./node_modules/.bin/concurrently -s first -k \"greenframe autorun ./greenframe.js http://localhost:3000 -p alpha\" \"yarn start\"",
+    "greenframe-audit-tunnel": "./node_modules/.bin/concurrently -s first -k \"greenframe analyze ./greenframe.js http://8d885090-6a1e-406f-a32c-8d2c9da56ea3-app.nat.greenframe.io:8080\" \"frpc\" \"yarn start\""
   }
 }

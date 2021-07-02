@@ -43,6 +43,6 @@ jobs:
             - run: curl https://assets.greenframe.io/install.sh | bash
             - run: greenframe update envvar
             - run: greenframe version
-            - run: greenframe analyze ./greenframe.js 8d885090-6a1e-406f-a32c-8d2c9da56ea3-app.nat.greenframe.io:8080
+            - run: yarn greenframe-audit-tunnel
               env:
                   GREENFRAME_PROJECT_ID: DasKleineKrokodile
