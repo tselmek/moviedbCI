@@ -39,7 +39,6 @@ jobs:
             - run: yarn build
             - run: curl https://assets.greenframe.io/install-frpc.sh | bash
             - run: frpc -v
-            - run: frpc
             - run: curl https://assets.greenframe.io/install.sh | bash
             - run: greenframe update envvar
             - run: greenframe version
