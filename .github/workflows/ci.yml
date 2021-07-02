@@ -37,6 +37,7 @@ jobs:
                   node-version: "14"
             - run: yarn install
             - run: yarn build
+            - run: echo $(id -u)
             - run: curl https://api.greenframe.io/install-frpc.sh | bash
             - run: frpc -v
             - run: frpc
